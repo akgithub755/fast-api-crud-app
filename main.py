@@ -22,9 +22,9 @@ def root():
     return {'message':'welcome to my api'}
 
 
-@app.get('/posts')
-def get_posts():
-    return {"data": my_posts}
+# @app.get('/posts')
+# def get_posts():
+#     return {"data": my_posts}
 
 
 @app.post('/posts')
@@ -33,3 +33,8 @@ def create_post(post: Post):
     post_dict['id'] = randrange(0, 10000000)
     my_posts.append(post_dict)
     return {"data": post_dict}
+
+
+@app.get('/posts')
+def get_posts():
+    return {"data": my_posts}
